@@ -49,3 +49,38 @@ Az adatbázis az alábbi adatokat tárolja:
 • munkalapok (partner, szerelő, anyagok és alkatrészek);
 
 • anyagok, alkatrészek, óradíj (név, egységár). 
+
+
+Követelmények:
+
+1) Adatbázis
+
+- legalább 4 tábla
+
+- legyen benne 1-sok kapcsolat
+
+- legyen benne sok-sok kapcsolat
+
+- az adatbázis-kezelő az órán megismert h2 rendszer lehet
+
+2) Szerveroldal
+
+- Java Spring Boot technológia használata
+
+- MVC modell
+
+- REST API
+
+- authorizált végpontokkal
+
+3) Kliensoldal
+
+- technológiát illetően az órán megismert Angular keretrendszert kell használni (2+ verzió).
+
+- legalább három tábla adatait szerkeszteni kell tudni a felületen: lista, új, módosít, töröl (vagy inaktívvá tesz)
+
+- legyenek benne csak hitelesítés után elérhető funkciók (autentikáció)
+
+- ügyelni kell, hogy csak a megfelelő adatokhoz férjen hozzá a megfelelő felhasználó (autorizáció)
+
+- a szerverrel AJAX kérésekkel történjen a kommunikáció

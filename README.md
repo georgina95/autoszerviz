@@ -1,6 +1,8 @@
 # Autószerviz
 Alkalmazások fejlesztése beadandó (példa 6.)
 
+Taskok: https://trello.com/b/LS7PpLk3/aut%C3%B3szerviz
+
 Készítsünk kliens-szerver rendszert, amellyel egy autószerviz bejelentkezési
 naptárát, valamint munkalap kezelését tudjuk elősegíteni.
 A partnerek időpontokat a webes felületen keresztül kérhetnek.

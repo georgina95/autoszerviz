@@ -1,0 +1,13 @@
+autoszerviz\model\Parts.class
+autoszerviz\model\User.class
+autoszerviz\model\Mechanics.class
+autoszerviz\model\Rates.class
+autoszerviz\controller\UserController.class
+autoszerviz\repository\MechanicsRepository.class
+autoszerviz\Autoszerviz.class
+autoszerviz\model\Materials.class
+autoszerviz\model\Worksheets.class
+autoszerviz\controller\MechanicsController.class
+autoszerviz\repository\UserRepository.class
+autoszerviz\model\Partners.class
+autoszerviz\model\Bookings.class

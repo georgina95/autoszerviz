@@ -6,12 +6,12 @@ import java.util.Optional;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.CrudRepository;
 
-import autoszerviz.model.User;
+import autoszerviz.model.Partner;
 
 @Repository
-public interface UserRepository
-    extends CrudRepository<User, Integer> {
+public interface PartnerRepository
+    extends CrudRepository<Partner, Integer> {
 
-    Optional<User> findById(int id);
-    Optional<User> findByUsername(String name);
+    Optional<Partner> findById(int id);
+    Optional<Partner> findByName(String name);
 }

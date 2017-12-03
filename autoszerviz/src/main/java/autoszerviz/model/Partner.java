@@ -5,21 +5,21 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class User {
+public class Partner {
+	
+	public String name;
+
+    public String address;
+
+    public String phonenumber;
 
     @Id
-    @GeneratedValue
-    public int id;
-
-    public String username;
-
-    @JsonIgnore
-    public String password;    
+	public int id;
+	
+	public String password;
 }

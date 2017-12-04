@@ -18,7 +18,4 @@ public class MechanicService {
 
         return optionalMechanic.filter(mechanic -> mechanic.getPassword().equals(password));
     }
-
-        return Optional.empty();
-    }
 }

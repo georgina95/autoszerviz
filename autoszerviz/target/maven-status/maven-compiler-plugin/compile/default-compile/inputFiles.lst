@@ -1,9 +1,11 @@
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\repository\BookingRepository.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Material.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Part.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\repository\PartnerRepository.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\repository\UserRepository.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Booking.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\Autoszerviz.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\controller\BookingController.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Mechanic.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\User.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\repository\MechanicRepository.java
@@ -15,4 +17,6 @@ E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Rat
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\service\PartnerService.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\controller\MechanicController.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Partner.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\service\BookingService.java
 E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\controller\PartnerController.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\service\MechanicService.java

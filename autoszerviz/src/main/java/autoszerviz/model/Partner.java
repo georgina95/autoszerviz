@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
 
 @Data
 @NoArgsConstructor
@@ -19,6 +20,7 @@ public class Partner {
     public String phonenumber;
 
     @Id
+	@GeneratedValue
 	public int id;
 	
 	public String password;

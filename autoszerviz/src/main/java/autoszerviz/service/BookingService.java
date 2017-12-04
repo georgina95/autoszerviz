@@ -13,13 +13,13 @@ public class BookingService {
     @Autowired
     private BookingRepository bookingRepository;
 
-    public Optional<Booking> register(String name, String date, int mechanicid, String type, String comment) {
-        Optional<Booking> optionalBooking = bookingRepository.findByMechanicid(mechanicid);
+    public Optional<Booking> book(int partnerid, String date, int mechanicid, String type, String comment) {
+        Optional<Booking> optionalBooking = bookingRepository.findByDateAndMechanicid(date, mechanicid);
 
-        if (!optionalBooking.isPresent() && (!optionalBooking.date.equals(date) || optionalBooking.mechanicid != mechanicid)) {
+        if (!optionalBooking.isPresent()) {
             Booking booking = new Booking();
 
-            booking.setName(name);
+            booking.setPartnerid(partnerid);
 			booking.setDate(date);
 			booking.setMechanicid(mechanicid);
             booking.setType(type);

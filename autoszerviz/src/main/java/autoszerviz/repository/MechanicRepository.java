@@ -11,6 +11,6 @@ import autoszerviz.model.Mechanic;
 public interface MechanicRepository
     extends CrudRepository<Mechanic, Integer> {
 
-	Optional<Partner> findById(int id);
+	Optional<Mechanic> findById(int id);
     Optional<Mechanic> findByName(String name);
 }

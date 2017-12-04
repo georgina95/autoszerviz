@@ -24,15 +24,14 @@ public class BookingController {
 
     @RequestMapping(value = "/book", method = RequestMethod.GET)
     public Response<Booking> book(
-        @RequestParam(value = "name") String name,
-        @RequestParam(value = "password") String password,
+        @RequestParam(value = "partnerid") int partnerid,
         @RequestParam(value = "date") String date,
         @RequestParam(value = "mechanicid") int mechanicid,
         @RequestParam(value = "type") String type,
         @RequestParam(value = "comment") String comment
 		
     ) {
-        Optional<Booking> optionalBooking = bookingService.book(name, date, mechanicid, type, comment);
+        Optional<Booking> optionalBooking = bookingService.book(partnerid, date, mechanicid, type, comment);
 
         if (optionalBooking.isPresent()) {
             Booking booking = optionalBooking.get();

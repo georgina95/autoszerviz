@@ -8,9 +8,9 @@ INSERT INTO mechanic (name, id, password) VALUES ('Janos', 1, 'tizenketmajom');
 INSERT INTO mechanic (name, id, password) VALUES ('Gabor', 2, 'reparetek');
 INSERT INTO mechanic (name, id, password) VALUES ('Gandalf', 3, 'youshallnotpassword');
 
-INSERT INTO booking (id, partnerid, date, mechanicid, type, comment) VALUES (1, 3, '2017.10.20.', 2, 'kötelező szerviz', 'kotelezo');
-INSERT INTO booking (id, partnerid, date, mechanicid, type, comment) VALUES (2, 1, '2017.05.30.', 3, 'műszaki vizsga', 'muszaki');
-INSERT INTO booking (id, partnerid, date, mechanicid, type, comment) VALUES (3, 2, '2017.07.02', 1, 'meghibásodás', 'hibás');
+INSERT INTO booking (id, partnerid, date, mechanicid, type, comment) VALUES (0, 3, '2017.10.20.', 2, 'kötelező szerviz', 'kotelezo');
+INSERT INTO booking (id, partnerid, date, mechanicid, type, comment) VALUES (1, 1, '2017.05.30.', 3, 'műszaki vizsga', 'muszaki');
+INSERT INTO booking (id, partnerid, date, mechanicid, type, comment) VALUES (2, 2, '2017.07.02', 1, 'meghibásodás', 'hibás');
 
 INSERT INTO worksheet (id, partnerid, mechanicid, materialid, partid) VALUES (1, 1, 1, 1, 1);
 INSERT INTO worksheet (id, partnerid, mechanicid, materialid, partid) VALUES (2, 2, 2, 2, 2);

@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
 
 @Data
 @NoArgsConstructor
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 public class Rate {
 
     @Id
+	@GeneratedValue
 	public int id;
 	
     public String name;

@@ -14,6 +14,7 @@ import autoszerviz.model.Booking;
 import autoszerviz.utility.Response;
 
 import java.util.Optional;
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/api/booking")
@@ -41,4 +42,5 @@ public class BookingController {
 
         return Response.error("Name is already in use!");
     }
+	
 }

@@ -1,6 +1,5 @@
 package autoszerviz.repository;
 
-// goo.gl/tV6U5T
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;

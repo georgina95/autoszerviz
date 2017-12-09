@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.GeneratedValue;
 
 @Data
@@ -17,11 +19,19 @@ public class Worksheet {
 	@GeneratedValue
 	public int id;
 	
-    public int partnerid;
+    @JoinColumn
+	@ManyToOne(targetEntity = Partner.class)
+    public Partner partner;
 
-    public int mechanicid;    
+    @JoinColumn
+	@ManyToOne(targetEntity = Mechanic.class)
+    public Mechanic mechanic;
 	
-	public int materialid;
+	@JoinColumn
+	@ManyToOne(targetEntity = Material.class)
+    public Material material;
 	
-	public int partid;
+	@JoinColumn
+	@ManyToOne(targetEntity = Part.class)
+    public Part part;
 }

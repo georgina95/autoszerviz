@@ -8,14 +8,6 @@ INSERT INTO mechanic (name, id, password) VALUES ('Janos', 1, 'tizenketmajom');
 INSERT INTO mechanic (name, id, password) VALUES ('Gabor', 2, 'reparetek');
 INSERT INTO mechanic (name, id, password) VALUES ('Gandalf', 3, 'youshallnotpassword');
 
-INSERT INTO booking (id, partnerid, date, mechanicid, type, comment) VALUES (0, 3, '2017.10.20.', 2, 'kötelező szerviz', 'kotelezo');
-INSERT INTO booking (id, partnerid, date, mechanicid, type, comment) VALUES (1, 1, '2017.05.30.', 3, 'műszaki vizsga', 'muszaki');
-INSERT INTO booking (id, partnerid, date, mechanicid, type, comment) VALUES (2, 2, '2017.07.02', 1, 'meghibásodás', 'hibás');
-
-INSERT INTO worksheet (id, partnerid, mechanicid, materialid, partid) VALUES (1, 1, 1, 1, 1);
-INSERT INTO worksheet (id, partnerid, mechanicid, materialid, partid) VALUES (2, 2, 2, 2, 2);
-INSERT INTO worksheet (id, partnerid, mechanicid, materialid, partid) VALUES (3, 3, 3, 3, 3);
-
 INSERT INTO material (id, name, price) VALUES (1, 'vas', 10);
 INSERT INTO material (id, name, price) VALUES (2, 'fa', 20);
 INSERT INTO material (id, name, price) VALUES (3, 'aluminium', 30);
@@ -28,11 +20,19 @@ INSERT INTO rate (id, name, price) VALUES (1, 'ezmi', 1000);
 INSERT INTO rate (id, name, price) VALUES (2, 'ezismi', 1200);
 INSERT INTO rate (id, name, price) VALUES (3, 'megezismi', 2500);
 
-CREATE VIEW booked AS
+INSERT INTO booking (id, partner_id, date, mechanic_id, type, comment) VALUES (0, 3, '2017.10.20.', 2, 'COMPULSORY_SERVICE', 'kotelezo');
+INSERT INTO booking (id, partner_id, date, mechanic_id, type, comment) VALUES (1, 1, '2017.05.30.', 3, 'TECHNICAL_EXAMINATION', 'muszaki');
+INSERT INTO booking (id, partner_id, date, mechanic_id, type, comment) VALUES (2, 2, '2017.07.02', 1, 'MALFUNCTION', 'hibás');
+
+INSERT INTO worksheet (id, partner_id, mechanic_id, material_id, part_id) VALUES (1, 1, 1, 1, 1);
+INSERT INTO worksheet (id, partner_id, mechanic_id, material_id, part_id) VALUES (2, 2, 2, 2, 2);
+INSERT INTO worksheet (id, partner_id, mechanic_id, material_id, part_id) VALUES (3, 3, 3, 3, 3);
+
+/*CREATE VIEW booked AS
 select A.id "ID", C.name as "Partner Name", B.name as "Mechanic Name", B.phonenumber as "Mechanic Phone Number", A.date as "Date", A.type as "Type", A.comment as "Comment" from
 booking A
 INNER JOIN partner B ON A.mechanicid = B.id
-INNER JOIN mechanic C ON A.partnerid = C.id;
+INNER JOIN mechanic C ON A.partnerid = C.id;*/
 
 
 

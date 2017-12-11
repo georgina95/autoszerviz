@@ -103,6 +103,19 @@ Követelmények:
 
 ![Controller](docs/img/controller.png)
 
+>PartnerController:
+A rendszer elérhetőségét biztosítja a partnereknek a /partner aloldalain keresztül.
+
+Partnerre vonatkozó:
+A login() függvény a bejelentkezési adatokat kéri, nevet (name) és jelszót (password). A /login aloldalon érhető el, és POST requesten keresztül kéri be a paramétereit. Sessionbe tárolja el a felhasználó adatait kijelentkezésig. Amennyiben a partner adatai nem helyesek, hibát dob.
+
+A register() függvény kéri a nevet (name), címet (address), telefonszámot (phonenumber) és jelszót (password). A /register aloldalon érhető el, és POST requesten keresztül kéri be a paramétereit. Ha nem talál egyező nevű partnert, elhelyezi az új sort az adatbázisban. Ellenkező esetben hibát dob.
+
+A logout() függvény paraméter néküli, mindig a sessionben éppen tárolt partnert jelentkezteti ki a session kiürítésével. A /logout aloldalon keresztül érhető el.
+
+Foglalásra vonatkozó:
+A bookList() függvény a szerelő azonosítóját (mechanicid) kéri. A /booklist aloldalon érhető el és POSr requesten keresztül kéri be a paraméterét. Ha nem talál bejelentkezett partnert, ezt hibaüzenetben jelzi. Ezentúl ha a partnerhez nem tartozik, vagy a az adott szerelővel
+
 >Service:
 
 ![Service](docs/img/service.png)

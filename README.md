@@ -87,5 +87,6 @@ Követelmények:
 
 - a szerverrel AJAX kérésekkel történjen a kommunikáció
 
-#Osztálymodell
+Osztálymodell
+
 ![Tables](docs/img/tables.png)

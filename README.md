@@ -96,16 +96,21 @@ Követelmények:
 *Osztályok:*
 
 >Model:
+
 ![Model](docs/img/model.png)
 
 >Controller:
+
 ![Controller](docs/img/controller.png)
 
 >Service:
+
 ![Service](docs/img/service.png)
 
 >Repository:
+
 ![Repository](docs/img/repository.png)
 
 >Utility:
+
 ![Utility](docs/img/utility.png)

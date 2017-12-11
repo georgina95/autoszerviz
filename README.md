@@ -98,14 +98,14 @@ Követelmények:
 >Model:
 ![Model](docs/img/model.png)
 
-Controller:
+>Controller:
 ![Controller](docs/img/controller.png)
 
-Service:
+>Service:
 ![Service](docs/img/service.png)
 
-Repository:
+>Repository:
 ![Repository](docs/img/repository.png)
 
-Utility:
+>Utility:
 ![Utility](docs/img/utility.png)

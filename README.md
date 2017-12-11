@@ -132,9 +132,11 @@ Foglalásokra vonatkozó:
 A bookList() függvény paraméter nélküli, és a /booklist aloldalon érhető el. A bejelentkezett szerelő alapján kiszűri az adott szerelőhöz tartozó foglalásokat, és azt adja vissza egy listában. Ha nem talál bejelentkezett szerelőt, ezt hibaüzenetben jelzi. Ezentúl ha a szerelőhöz nem tartozik egy elem sem, ugyancsak hibaüzenetet ad vissza.
 
 Munkalapra vonatkozó:
-A worksheetList(date) függvény egy dátumot kér. A /worksheet aloldalon érhető el, és POST requestel kéri be paraméterét. A bejelentkezett szerelő és a megadott dátum alapján megjeleníti a munkalaphoz tartozó összes bejegyzést. Ha nem talál egy bejegyzést sem, hibát ad vissza.
+A worksheetList(date) függvény egy dátumot (date) kér. A /worksheet aloldalon érhető el, és POST requestel kéri be paraméterét. A bejelentkezett szerelő és a megadott dátum alapján megjeleníti a munkalaphoz tartozó összes bejegyzést. Ha nem talál egy bejegyzést sem, hibát ad vissza.
 
-Az addNew(partnerid, date, materialid) függvény
+Az addNew(partnerid, date, materialid) függvény egy partnerazonosítót (partnerid), időpontot (date) és anyag azonosítót (materialid) kér. A /worksheet/addnew aloldalon érhető el, és POST requestel kéri be paramétereit. Új bejegyzést ad egy munkalaphoz. Ha már létezik az adott sor, vagy nincs bejelentkezve egy szerelő sem, hiábt dob vissza.
+
+A delete(id) függvény a munkalap azonodítóját (id) kéri. A /worksheet/delete aloldalon érhető el és POST requesten keresztül kéri be a paraméterét. Ha sikeres a futás, törli az adott munkalap sort, majd visszaadja az épp törölt entityt. Ha nincs jogosultsága a bejelentkezett szerelőnek az adott munkalap sor törlésére, vagy az adott munkalap sor nem létezik a függvény meghívásakor, a program hibaüzenetet dob.
 
 >Service:
 

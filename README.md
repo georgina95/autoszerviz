@@ -86,3 +86,4 @@ Követelmények:
 - ügyelni kell, hogy csak a megfelelő adatokhoz férjen hozzá a megfelelő felhasználó (autorizáció)
 
 - a szerverrel AJAX kérésekkel történjen a kommunikáció
+![Tables](docs/images/tables.png)

@@ -92,3 +92,8 @@ Követelmények:
 *Táblák:*
 
 ![Tables](docs/img/tables.png)
+
+*Osztályok:*
+Modell:
+![Tables](docs/img/modell.png)
+

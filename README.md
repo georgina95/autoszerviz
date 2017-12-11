@@ -107,14 +107,34 @@ Követelmények:
 A rendszer elérhetőségét biztosítja a partnereknek a /partner aloldalain keresztül.
 
 Partnerre vonatkozó:
-A login() függvény a bejelentkezési adatokat kéri, nevet (name) és jelszót (password). A /login aloldalon érhető el, és POST requesten keresztül kéri be a paramétereit. Sessionbe tárolja el a felhasználó adatait kijelentkezésig. Amennyiben a partner adatai nem helyesek, hibát dob.
+A login(name, password) függvény a bejelentkezési adatokat kéri, nevet (name) és jelszót (password). A /login aloldalon érhető el, és POST requesten keresztül kéri be a paramétereit. Sessionbe tárolja el a felhasználó adatait kijelentkezésig. Amennyiben a partner adatai nem helyesek, hibát dob.
 
-A register() függvény kéri a nevet (name), címet (address), telefonszámot (phonenumber) és jelszót (password). A /register aloldalon érhető el, és POST requesten keresztül kéri be a paramétereit. Ha nem talál egyező nevű partnert, elhelyezi az új sort az adatbázisban. Ellenkező esetben hibát dob.
+A register(name, address, phonenumber, password) függvény kéri a nevet (name), címet (address), telefonszámot (phonenumber) és jelszót (password). A /register aloldalon érhető el, és POST requesten keresztül kéri be a paramétereit. Ha nem talál egyező nevű partnert, elhelyezi az új sort az adatbázisban, és visszaadja a létrehozott entity adatait. Ellenkező esetben hibát dob.
 
 A logout() függvény paraméter néküli, mindig a sessionben éppen tárolt partnert jelentkezteti ki a session kiürítésével. A /logout aloldalon keresztül érhető el.
 
-Foglalásra vonatkozó:
-A bookList() függvény a szerelő azonosítóját (mechanicid) kéri. A /booklist aloldalon érhető el és POSr requesten keresztül kéri be a paraméterét. Ha nem talál bejelentkezett partnert, ezt hibaüzenetben jelzi. Ezentúl ha a partnerhez nem tartozik, vagy a az adott szerelővel
+Foglalásokra vonatkozó:
+A bookList(mechanicid) függvény a szerelő azonosítóját (mechanicid) kéri. A /booklist aloldalon érhető el és POST requesten keresztül kéri be a paraméterét. A megadott szerelő alapján kiszűri, hogy mely időbpontok foglaltak, és a bejelentkezett partner saját foglalásain kívüli, idegen foglalásoknál elrejti a partnerek adatait, így adja át egy listában a foglalásokat. Ha nem talál bejelentkezett partnert, ezt hibaüzenetben jelzi. Ezentúl ha a partnerhez nem tartozik egy elem sem, vagy az adott szerelővel nincs csak foglalás, ugyancsak hibaüzenetet ad vissza.
+
+A book(date, mechanicid, type, comment) függvény a foglalás dátumát (date), a szerelő azonosítóját (mechanicid), a munka típusát (type) és a megjegyzést (comment) kéri. A /booklist/book aloldalon érthető el, és POST requesten keresztül kéri be a paramétereit. Sikeres foglalás esetén elmenti a foglalások közé az új elemet, majd vissza is adja a megalkotott entityt. Ha nem talál bejelentkezett partnert, ezt hibaüzenetben jelzi, valamint azt is, ha a foglalni kívánt időpont az adott szerelővel már le van foglalva.
+
+A delete(id) függvény a foglalás azonodítóját kéri. A /booklist/delete aloldalon érhető el és POST requesten keresztül kéri be a paraméterét. Ha sikeres a futás, törli az adott foglalást, majd visszaadja az épp törölt entityt. Ha nincs jogosultsága a bejelentkezett partnernek az adott foglalás törlésére, vagy a foglalás nem létezik a függvény meghívásakor, a program hibaüzenetet dob.
+
+>MechanicController:
+A rendszer elérhetőségét biztosítja a szerelőknek a /mechanic aloldalain keresztül.
+
+Szerelőre vonatkozó:
+A login(name, password) függvény a bejelentkezési adatokat kéri, nevet (name) és jelszót (password). A /login aloldalon érhető el, és POST requesten keresztül kéri be a paramétereit. Sessionbe tárolja el a felhasználó adatait kijelentkezésig. Amennyiben a szerelő adatai nem helyesek, hibát dob.
+
+A logout() függvény paraméter néküli, mindig a sessionben éppen tárolt szerelőt jelentkezteti ki a session kiürítésével. A /logout aloldalon keresztül érhető el.
+
+Foglalásokra vonatkozó:
+A bookList() függvény paraméter nélküli, és a /booklist aloldalon érhető el. A bejelentkezett szerelő alapján kiszűri az adott szerelőhöz tartozó foglalásokat, és azt adja vissza egy listában. Ha nem talál bejelentkezett szerelőt, ezt hibaüzenetben jelzi. Ezentúl ha a szerelőhöz nem tartozik egy elem sem, ugyancsak hibaüzenetet ad vissza.
+
+Munkalapra vonatkozó:
+A worksheetList(date) függvény egy dátumot kér. A /worksheet aloldalon érhető el, és POST requestel kéri be paraméterét. A bejelentkezett szerelő és a megadott dátum alapján megjeleníti a munkalaphoz tartozó összes bejegyzést. Ha nem talál egy bejegyzést sem, hibát ad vissza.
+
+Az addNew(partnerid, date, materialid) függvény
 
 >Service:
 

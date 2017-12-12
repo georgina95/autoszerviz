@@ -42,12 +42,14 @@ public class MechanicController {
         Optional<Mechanic> optionalMechanic = mechanicService.login(name, password);
 
         if (optionalMechanic.isPresent()) {
-            Mechanic mechanic = optionalMechanic.get();
+			if(session.getMechanic() == null) {
+				Mechanic mechanic = optionalMechanic.get();
             
-			session.setMechanic(mechanic);
-            return Response.ok(mechanic);
+				session.setMechanic(mechanic);
+				return Response.ok(mechanic);
+			}
+			return Response.error("Someone already logged in!");
         }
-
         return Response.error("Wrong name-password pair!");
     }
 	
@@ -55,15 +57,6 @@ public class MechanicController {
     public Response logout() {
         session.setMechanic(null);
         return Response.ok(false);
-	}
-	
-	@GetMapping("/test")
-    public Response getMechanic() {
-        if (session.getMechanic() == null) {
-            return Response.ok(false);
-        } else {
-            return Response.ok(session.getMechanic());
-        }
 	}
 	
 	//#####BOOKING######
@@ -79,7 +72,10 @@ public class MechanicController {
 						bookingList.add(b);
 				}
 				
-				return Response.ok(bookingList);
+				if(bookingList.size() != 0)
+					return Response.ok(bookingList);
+				else
+					return Response.error("Booklist list with this date cannot be found!");
 			}
 			return Response.error("Booking list cannot be found!");
 		}
@@ -99,35 +95,40 @@ public class MechanicController {
 				for(Worksheet w : fullList) {
 					if(w.getMechanic().getId() == session.getMechanic().getId())
 						wsList.add(w);
-				}//http://localhost:8080/api/mechanic/addnew?partnerid=2&date=2017-07-02%2016:00:00&mechanicid=1&materialid=2&partid=1
+				}
 				
-				return Response.ok(wsList);
+				if(wsList.size() != 0)
+					return Response.ok(wsList);
+				else
+					return Response.error("Worksheet list with this date cannot be found!");
 			}
 			return Response.error("Worksheet list cannot be found!");
 		}
 		return Response.error("You are not logged in!");
 	}
 	
-	@RequestMapping(value = "/addnew", method = RequestMethod.POST)
+	@RequestMapping(value = "worksheet/addnew", method = RequestMethod.POST)
     public Response<Worksheet> addNew(
         @RequestParam(value = "partnerid") int partnerid,
         @RequestParam(value = "date") String date,
-        @RequestParam(value = "materialid") int materialid,
-        @RequestParam(value = "partid") int partid
+        @RequestParam(value = "materialid") int materialid
 		
     ) {
-        Optional<Worksheet> optionalWorksheet = worksheetService.addNew(partnerid, date, session.getMechanic().getId(), materialid, partid);
+		if(session.getMechanic() != null) {
+			Optional<Worksheet> optionalWorksheet = worksheetService.addNew(partnerid, date, session.getMechanic().getId(), materialid);
 
-        if (optionalWorksheet.isPresent()) {
-            Worksheet worksheet = optionalWorksheet.get();
-            
-            return Response.ok(worksheet);
-        }
+			if (optionalWorksheet.isPresent()) {
+				Worksheet worksheet = optionalWorksheet.get();
+				
+				return Response.ok(worksheet);
+			}
 
-        return Response.error("Row already exist!");
+			return Response.error("Row already exist!");
+		}
+		return Response.error("You are not logged in!");
     }
 	
-	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	@RequestMapping(value = "worksheet/delete", method = RequestMethod.POST)
 	public Response<Worksheet> delete(
 	@RequestParam(value = "id") int id
 		){
@@ -136,8 +137,11 @@ public class MechanicController {
 			Optional<Worksheet> optionalWorksheet = worksheetService.getWorksheetById(id);
 			if (optionalWorksheet.isPresent()) {
 				Worksheet worksheet = optionalWorksheet.get();
-				worksheetService.delete(id);
-				return Response.ok(worksheet);
+				if(worksheet.getMechanic().getId() == mechanic.getId()) {
+					worksheetService.delete(id);
+					return Response.ok(worksheet);
+				}
+				return Response.error("You don't have the permission to delete other mechanic's worksheets!");
 			}
 			return Response.error("Worksheet cannot be found!");
 		}

@@ -32,8 +32,4 @@ public class Worksheet {
 	@JoinColumn
 	@ManyToOne(targetEntity = Material.class)
     public Material material;
-	
-	@JoinColumn
-	@ManyToOne(targetEntity = Part.class)
-    public Part part;
 }

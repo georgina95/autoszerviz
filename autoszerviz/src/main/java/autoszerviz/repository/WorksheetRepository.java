@@ -10,7 +10,6 @@ import autoszerviz.model.Worksheet;
 import autoszerviz.model.Mechanic;
 import autoszerviz.model.Partner;
 import autoszerviz.model.Material;
-import autoszerviz.model.Part;
 
 @Repository
 public interface WorksheetRepository
@@ -18,5 +17,5 @@ public interface WorksheetRepository
     Optional<Worksheet> findById(int id);
 	ArrayList<Worksheet> findAll();
 	Optional<Worksheet> findByDateAndMechanic(String date, Mechanic mechanic);
-	Optional<Worksheet> findByDateAndMechanicAndPartnerAndMaterialAndPart(String date, Mechanic mechanic, Partner partner, Material material, Part part);
+	Optional<Worksheet> findByDateAndMechanicAndPartnerAndMaterial(String date, Mechanic mechanic, Partner partner, Material material);
 }

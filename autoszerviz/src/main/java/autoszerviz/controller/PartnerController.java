@@ -38,12 +38,14 @@ public class PartnerController {
         Optional<Partner> optionalPartner = partnerService.login(name, password);
 
         if (optionalPartner.isPresent()) {
-            Partner partner = optionalPartner.get();
-            
-			session.setPartner(partner);
-            return Response.ok(partner);
+			if(session.getPartner() == null) {
+				Partner partner = optionalPartner.get();
+				
+				session.setPartner(partner);
+				return Response.ok(partner);
+			}
+			return Response.error("Someone already logged in!");
         }
-
         return Response.error("Wrong name-password pair!");
     }
 	
@@ -71,56 +73,58 @@ public class PartnerController {
         return Response.error("Name is already in use!");
     }
 	
-	@GetMapping("/test")
-    public Response getPartner() {
-        if (session.getPartner() == null) {
-            return Response.ok(false);
-        } else {
-            return Response.ok(session.getPartner());
-        }
-	}
-	
-	
-	//#####BOOK######
+	//#####BOOKING######
 	
 	@RequestMapping(value = "/booklist", method = RequestMethod.POST)
-	public Response< ArrayList<Booking> > bookList(){
+	public Response< ArrayList<Booking> > bookList(
+        @RequestParam(value = "mechanicid") int mechanicid
+	){
 		if(session.getPartner() != null) {
-			ArrayList<Booking> bookingList = bookingService.getList();
-			if (bookingList != null) {
-				for(Booking b : bookingList) {
-					if(b.getPartner().getId() != session.getPartner().getId())
-						b.partner = null;
+			ArrayList<Booking> fullList = bookingService.getList();
+			ArrayList<Booking> bookingList = new ArrayList<Booking>();
+			if (fullList != null) {
+				for(Booking b : fullList) {
+					if(b.getMechanic().getId() == mechanicid) {
+						if(b.getPartner().getId() != session.getPartner().getId())
+							b.partner = null;
+						bookingList.add(b);
+					}
 				}
 				
-				return Response.ok(bookingList);
+				if(bookingList.size() != 0)
+					return Response.ok(bookingList);
+				else
+					return Response.error("Booklist list with this mechanic cannot be found!");
 			}
 			return Response.error("Booking list cannot be found!");
 		}
 		return Response.error("You are not logged in!");
 	}
 	
-	@RequestMapping(value = "/book", method = RequestMethod.POST)
+	@RequestMapping(value = "/booklist/book", method = RequestMethod.POST)
     public Response<Booking> book(
-        @RequestParam(value = "partnerid") int partnerid,
         @RequestParam(value = "date") String date,
         @RequestParam(value = "mechanicid") int mechanicid,
         @RequestParam(value = "type") String type,
         @RequestParam(value = "comment") String comment
 		
     ) {
-        Optional<Booking> optionalBooking = bookingService.book(partnerid, date, mechanicid, type, comment);
+		if(session.getPartner() != null) {
+			Optional<Booking> optionalBooking = bookingService.book(session.getPartner().getId(), date, mechanicid, type, comment);
+		
+			if (optionalBooking.isPresent()) {
+				Booking booking = optionalBooking.get();
+				
+				return Response.ok(booking);
+			}
 
-        if (optionalBooking.isPresent()) {
-            Booking booking = optionalBooking.get();
-            
-            return Response.ok(booking);
-        }
-
-        return Response.error("Name is already in use!");
+			return Response.error("In this time the mechanic is already busy!");
+		}
+		return Response.error("You are not logged in!");
     }
 	
-	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	
+	@RequestMapping(value = "/booklist/delete", method = RequestMethod.POST)
 	public Response<Booking> delete(
 	@RequestParam(value = "id") int id
 		){

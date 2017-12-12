@@ -1,24 +1,20 @@
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\repository\BookingRepository.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Material.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Part.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\repository\PartnerRepository.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Booking.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\Autoszerviz.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\controller\BookingController.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Mechanic.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\repository\MechanicRepository.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\utility\Response.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Worksheet.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Rate.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\service\PartnerService.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\controller\MechanicController.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\service\WorksheetService.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\model\Partner.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\repository\MaterialRepository.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\service\BookingService.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\service\PartnerSession.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\repository\PartRepository.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\repository\WorksheetRepository.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\service\MechanicSession.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\controller\PartnerController.java
-E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz\src\main\java\autoszerviz\service\MechanicService.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\controller\MechanicController.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\model\Mechanic.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\service\MechanicSession.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\model\Material.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\repository\BookingRepository.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\repository\PartnerRepository.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\controller\PartnerController.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\model\Booking.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\repository\WorksheetRepository.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\model\Partner.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\model\Worksheet.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\repository\MechanicRepository.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\Autoszerviz.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\service\BookingService.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\service\PartnerService.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\service\PartnerSession.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\utility\Response.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\repository\MaterialRepository.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\service\MechanicService.java
+E:\Kristóf\ELTE\5. félév\Alkfejl\autoszerviz get\src\main\java\autoszerviz\service\WorksheetService.java

@@ -8,7 +8,6 @@ import autoszerviz.model.Worksheet;
 import autoszerviz.repository.MechanicRepository;
 import autoszerviz.repository.BookingRepository;
 import autoszerviz.repository.MaterialRepository;
-import autoszerviz.repository.PartRepository;
 import autoszerviz.repository.PartnerRepository;
 
 import java.util.Optional;
@@ -26,43 +25,21 @@ public class WorksheetService {
     private WorksheetRepository worksheetRepository;
 	@Autowired
     private MaterialRepository materialRepository;
-	@Autowired
-    private PartRepository partRepository;
 
     public ArrayList<Worksheet> selectWorksheet(String date) {
-        //Optional<Worksheet> optionalWorksheet = worksheetRepository.findByDateAndMechanic(date, mechanicRepository.findById(mechanicid).get());
-		
 		ArrayList<Worksheet> worksheets = new ArrayList<Worksheet>();
-		
-        /*if (!optionalWorksheet.isPresent()) {
-            Worksheet worksheet = new Worksheet();
-			
-            worksheet.setPartner(partnerRepository.findById(partnerid).get());
-			worksheet.setDate(date);
-			worksheet.setMechanic(mechanicRepository.findById(mechanicid).get());
-			worksheet.setMaterial(null);
-			worksheet.setPart(null);
-			
-            worksheetRepository.save(worksheet);
-			
-			
-			worksheets.add(worksheet);
-        }*/
-		
-		//else {
-			ArrayList<Worksheet> allWorksheets = worksheetRepository.findAll();
-			for(Worksheet w : allWorksheets) {
-				if(w.getDate().equals(date)) {
-					worksheets.add(w);
-				}
+		ArrayList<Worksheet> allWorksheets = worksheetRepository.findAll();
+		for(Worksheet w : allWorksheets) {
+			if(w.getDate().equals(date)) {
+				worksheets.add(w);
 			}
-		//}
+		}
 		
 		return worksheets;
     }
 	
-	public Optional<Worksheet> addNew(int partnerid, String date, int mechanicid, int materialid, int partid) {
-        Optional<Worksheet> optionalWorksheet = worksheetRepository.findByDateAndMechanicAndPartnerAndMaterialAndPart(date, mechanicRepository.findById(mechanicid).get(),partnerRepository.findById(partnerid).get(),materialRepository.findById(materialid).get(),partRepository.findById(partid).get());
+	public Optional<Worksheet> addNew(int partnerid, String date, int mechanicid, int materialid) {
+        Optional<Worksheet> optionalWorksheet = worksheetRepository.findByDateAndMechanicAndPartnerAndMaterial(date, mechanicRepository.findById(mechanicid).get(),partnerRepository.findById(partnerid).get(),materialRepository.findById(materialid).get());
 
         if (!optionalWorksheet.isPresent()) {
             Worksheet worksheet = new Worksheet();
@@ -71,7 +48,6 @@ public class WorksheetService {
 			worksheet.setDate(date);
 			worksheet.setMechanic(mechanicRepository.findById(mechanicid).get());
 			worksheet.setMaterial(materialRepository.findById(materialid).get());
-			worksheet.setPart(partRepository.findById(partid).get());
             
             worksheetRepository.save(worksheet);
 

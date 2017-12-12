@@ -10,21 +10,13 @@ INSERT INTO material (id, name, price) VALUES (1, 'vas', 10);
 INSERT INTO material (id, name, price) VALUES (2, 'fa', 20);
 INSERT INTO material (id, name, price) VALUES (3, 'aluminium', 30);
 
-INSERT INTO part (id, name, price) VALUES (1, 'csavar', 40);
-INSERT INTO part (id, name, price) VALUES (2, 'kar', 70);
-INSERT INTO part (id, name, price) VALUES (3, 'doboz', 100);
-
-INSERT INTO rate (id, name, price) VALUES (1, 'ezmi', 1000);
-INSERT INTO rate (id, name, price) VALUES (2, 'ezismi', 1200);
-INSERT INTO rate (id, name, price) VALUES (3, 'megezismi', 2500);
-
 INSERT INTO booking (id, partner_id, date, mechanic_id, type, comment) VALUES (0, 3, '2017-10-20 09:00:00', 2, 'COMPULSORY_SERVICE', 'kotelezo');
 INSERT INTO booking (id, partner_id, date, mechanic_id, type, comment) VALUES (1, 1, '2017-05-30 13:00:00', 3, 'TECHNICAL_EXAMINATION', 'muszaki');
 INSERT INTO booking (id, partner_id, date, mechanic_id, type, comment) VALUES (2, 2, '2017-07-02 16:00:00', 1, 'MALFUNCTION', 'hibas');
 
-INSERT INTO worksheet (id, partner_id, date, mechanic_id, material_id, part_id) VALUES (0, 3, '2017-10-20 09:00:00', 2, 1, 1);
-INSERT INTO worksheet (id, partner_id, date, mechanic_id, material_id, part_id) VALUES (1, 1, '2017-05-30 13:00:00', 3, 2, 2);
-INSERT INTO worksheet (id, partner_id, date, mechanic_id, material_id, part_id) VALUES (2, 2, '2017-07-02 16:00:00', 1, 3, 3);
+INSERT INTO worksheet (id, partner_id, date, mechanic_id, material_id/*, part_id*/) VALUES (0, 3, '2017-10-20 09:00:00', 2, 1);
+INSERT INTO worksheet (id, partner_id, date, mechanic_id, material_id) VALUES (1, 1, '2017-05-30 13:00:00', 3, 2);
+INSERT INTO worksheet (id, partner_id, date, mechanic_id, material_id) VALUES (2, 2, '2017-07-02 16:00:00', 1, 3);
 
 
 

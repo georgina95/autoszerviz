@@ -30,7 +30,7 @@ public class PartnerController {
 	@Autowired
     private BookingService bookingService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public Response<Partner> login(
         @RequestParam(value = "name") String name,
         @RequestParam(value = "password") String password
@@ -55,7 +55,7 @@ public class PartnerController {
         return Response.ok(false);
 	}
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
     public Response<Partner> register(
         @RequestParam(value = "name") String name,
         @RequestParam(value = "address") String address,
@@ -75,7 +75,7 @@ public class PartnerController {
 	
 	//#####BOOKING######
 	
-	@RequestMapping(value = "/booklist", method = RequestMethod.POST)
+	@RequestMapping(value = "/booklist", method = RequestMethod.GET)
 	public Response< ArrayList<Booking> > bookList(
         @RequestParam(value = "mechanicid") int mechanicid
 	){
@@ -101,7 +101,7 @@ public class PartnerController {
 		return Response.error("You are not logged in!");
 	}
 	
-	@RequestMapping(value = "/booklist/book", method = RequestMethod.POST)
+	@RequestMapping(value = "/booklist/book", method = RequestMethod.GET)
     public Response<Booking> book(
         @RequestParam(value = "date") String date,
         @RequestParam(value = "mechanicid") int mechanicid,
@@ -124,7 +124,7 @@ public class PartnerController {
     }
 	
 	
-	@RequestMapping(value = "/booklist/delete", method = RequestMethod.POST)
+	@RequestMapping(value = "/booklist/delete", method = RequestMethod.GET)
 	public Response<Booking> delete(
 	@RequestParam(value = "id") int id
 		){

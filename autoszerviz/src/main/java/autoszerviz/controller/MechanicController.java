@@ -34,7 +34,7 @@ public class MechanicController {
 	@Autowired
     private BookingService bookingService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public Response<Mechanic> login(
         @RequestParam(value = "name") String name,
         @RequestParam(value = "password") String password
@@ -61,7 +61,7 @@ public class MechanicController {
 	
 	//#####BOOKING######
 	
-	@RequestMapping(value = "/booklist", method = RequestMethod.POST)
+	@RequestMapping(value = "/booklist", method = RequestMethod.GET)
 	public Response< ArrayList<Booking> > bookList(){
 		if(session.getMechanic() != null) {
 			ArrayList<Booking> fullList = bookingService.getList();
@@ -84,7 +84,7 @@ public class MechanicController {
 	
 	//#####WORKSHEET######
 	
-	@RequestMapping(value = "/worksheet", method = RequestMethod.POST)
+	@RequestMapping(value = "/worksheet", method = RequestMethod.GET)
 	public Response< ArrayList<Worksheet> > worksheetList(
 		@RequestParam(value = "date") String date
 	){
@@ -107,7 +107,7 @@ public class MechanicController {
 		return Response.error("You are not logged in!");
 	}
 	
-	@RequestMapping(value = "worksheet/addnew", method = RequestMethod.POST)
+	@RequestMapping(value = "worksheet/addnew", method = RequestMethod.GET)
     public Response<Worksheet> addNew(
         @RequestParam(value = "partnerid") int partnerid,
         @RequestParam(value = "date") String date,
@@ -128,7 +128,7 @@ public class MechanicController {
 		return Response.error("You are not logged in!");
     }
 	
-	@RequestMapping(value = "worksheet/delete", method = RequestMethod.POST)
+	@RequestMapping(value = "worksheet/delete", method = RequestMethod.GET)
 	public Response<Worksheet> delete(
 	@RequestParam(value = "id") int id
 		){
